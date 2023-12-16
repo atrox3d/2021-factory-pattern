@@ -5,7 +5,7 @@ from .audio.audioexporter import AudioExporter
 from .video.lossles import LosslessVideoExporter
 from .audio.wav import WAVAudioExporter
 
-class FastExporter(ExporterFactory):
+class MasterExporter(ExporterFactory):
     
     def get_video_exporter(self) -> VideoExporter:
         return LosslessVideoExporter()

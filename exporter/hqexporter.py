@@ -5,7 +5,7 @@ from .audio.audioexporter import AudioExporter
 from .video.h264bp import H264BPVideoExporter
 from .audio.aac import AACAudioExporter
 
-class FastExporter(ExporterFactory):
+class HQExporter(ExporterFactory):
     
     def get_video_exporter(self) -> VideoExporter:
         return H264BPVideoExporter()
