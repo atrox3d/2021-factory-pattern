@@ -12,17 +12,7 @@ from video.h264hi422p import H264Hi422PVideoExporter
 
 from audio.audioexporter import AudioExporter
 from audio.aac import AACAudioExporter
-
-
-
-class WAVAudioExporter(AudioExporter):
-    """WAV (lossless) audio exporting codec."""
-
-    def prepare_export(self, audio_data):
-        print("Preparing audio data for WAV export.")
-
-    def do_export(self, folder: pathlib.Path):
-        print(f"Exporting audio data in WAV format to {folder}.")
+from audio.wav import AudioExporter
 
 
 def main() -> None:
