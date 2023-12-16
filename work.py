@@ -3,7 +3,6 @@ Basic video exporting example
 """
 
 import pathlib
-from abc import ABC, abstractmethod
 
 from exporter.video.videoexporter import VideoExporter
 from exporter.audio.audioexporter import AudioExporter
@@ -21,9 +20,9 @@ def read_exporter() -> ExporterFactory:
         master = MasterExporter()
     )
 
-    export_quality: str
     while True:
-        export_quality = input("Enter desired output quality (low, high, master): ")
+        qualities = ', '.join(factories.keys())
+        export_quality = input(f"Enter desired output quality ({qualities}): ")
         if export_quality in factories:
             return factories[export_quality]
         print(f"Unknown output quality option: {export_quality}.")
