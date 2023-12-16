@@ -1,5 +1,5 @@
 import pathlib
-from video.videoexporter import VideoExporter
+from .videoexporter import VideoExporter
 
 
 class LosslessVideoExporter(VideoExporter):

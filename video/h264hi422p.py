@@ -1,5 +1,5 @@
 import pathlib
-from video.videoexporter import VideoExporter
+from .videoexporter import VideoExporter
 
 class H264Hi422PVideoExporter(VideoExporter):
     """H.264 video exporting codec with Hi422P profile (10-bit, 4:2:2 chroma sampling)."""

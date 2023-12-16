@@ -10,26 +10,9 @@ from video.lossles import LosslessVideoExporter
 from video.h264bp import H264BPVideoExporter
 from video.h264hi422p import H264Hi422PVideoExporter
 
-class AudioExporter(ABC):
-    """Basic representation of audio exporting codec."""
+from audio.audioexporter import AudioExporter
+from audio.aac import AACAudioExporter
 
-    @abstractmethod
-    def prepare_export(self, audio_data):
-        """Prepares audio data for exporting."""
-
-    @abstractmethod
-    def do_export(self, folder: pathlib.Path):
-        """Exports the audio data to a folder."""
-
-
-class AACAudioExporter(AudioExporter):
-    """AAC audio exporting codec."""
-
-    def prepare_export(self, audio_data):
-        print("Preparing audio data for AAC export.")
-
-    def do_export(self, folder: pathlib.Path):
-        print(f"Exporting audio data in AAC format to {folder}.")
 
 
 class WAVAudioExporter(AudioExporter):
