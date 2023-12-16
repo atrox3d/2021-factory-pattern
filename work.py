@@ -5,14 +5,14 @@ Basic video exporting example
 import pathlib
 from abc import ABC, abstractmethod
 
-from video.videoexporter import VideoExporter
-from video.lossles import LosslessVideoExporter
-from video.h264bp import H264BPVideoExporter
-from video.h264hi422p import H264Hi422PVideoExporter
+from exporter.video.videoexporter import VideoExporter
+from exporter.video.lossles import LosslessVideoExporter
+from exporter.video.h264bp import H264BPVideoExporter
+from exporter.video.h264hi422p import H264Hi422PVideoExporter
 
-from audio.audioexporter import AudioExporter
-from audio.aac import AACAudioExporter
-from audio.wav import WAVAudioExporter
+from exporter.audio.audioexporter import AudioExporter
+from exporter.audio.aac import AACAudioExporter
+from exporter.audio.wav import WAVAudioExporter
 
 
 def main() -> None:
