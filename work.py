@@ -12,7 +12,7 @@ from video.h264hi422p import H264Hi422PVideoExporter
 
 from audio.audioexporter import AudioExporter
 from audio.aac import AACAudioExporter
-from audio.wav import AudioExporter
+from audio.wav import WAVAudioExporter
 
 
 def main() -> None:
