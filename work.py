@@ -8,15 +8,15 @@ from exporter.video.videoexporter import VideoExporter
 from exporter.audio.audioexporter import AudioExporter
 
 from exporter.factory import ExporterFactory
-from exporter.factories import Factories
+from exporter.factories import factories
 
-def read_exporter(factories: Factories) -> ExporterFactory:
+def read_exporter(factories: dict) -> ExporterFactory:
     # read the desired export quality
     while True:
-        qualities = factories.get_qualities()
+        qualities = ', '.join(factories)
         export_quality = input(f"Enter desired output quality ({qualities}): ")
-        if export_quality in factories.get_qualities():
-            return factories.get_factory(export_quality)
+        if export_quality in factories:
+            return factories[export_quality]
         print(f"Unknown output quality option: {export_quality}.")
 
 def main(fac: ExporterFactory) -> None:
@@ -37,6 +37,5 @@ def main(fac: ExporterFactory) -> None:
 
 
 if __name__ == "__main__":
-    factories = Factories()
     fac = read_exporter(factories)
     main(fac)
